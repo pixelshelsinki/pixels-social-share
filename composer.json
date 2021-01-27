@@ -1,0 +1,38 @@
+{
+    "name": "pixelshelsinki/social-share",
+    "description": "Social Share component for WordPress",
+    "type": "library",
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "phpunit/phpunit": "^9"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Silvanus / Sampo Silvennoinen",
+            "email": "sampo@pixels.fi",
+            "homepage": "https://github.com/pixelshelsinki/pixels-social-share"
+        }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Pixels\\Components\\SocialShare\\": "src/"
+      }
+    },
+    "scripts": {
+      "test": [
+        "composer lint",
+        "composer phpunit"
+      ],
+      "lint": [
+        "phpcs"
+      ],
+      "fix": [
+        "phpcbf -p -w"
+      ],
+      "phpunit": [
+        "phpunit --testdox"
+      ]
+    }
+}
