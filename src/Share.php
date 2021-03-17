@@ -68,7 +68,7 @@ class Share
      * @return string $link to be used in href.
      * @since 1.0
      */
-    public static function whatsapp($url = null)
+    public static function whatsapp(?string $url = null)
     {
 
         $url  = $url ?? self::get_current_url();
