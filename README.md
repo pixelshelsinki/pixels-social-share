@@ -24,11 +24,13 @@ use Pixels\Components\SocialShare\Share;
 $facebook_share = Share::facebook();
 $twitter_share  = Share::twitter();
 $linkedin_share = Share::linkedin();
+$whatsapp_share  = Share:: whatsapp();
 
 // Given url.
 $facebook_share = Share::facebook('https://www.pixels.fi/');
 $twitter_share  = Share::twitter('https://www.pixels.fi/');
 $linkedin_share = Share::linkedin('https://www.pixels.fi/');
+$whatsapp_share = Share::whatsapp('https://www.pixels.fi/');
 
 ```
 
@@ -47,6 +49,7 @@ function add_share_functions( $twig ) {
     $twig->addFunction( new Twig_Function( 'facebook_share', '\\Pixels\\Components\\SocialShare\\Share::facebook' ) );
     $twig->addFunction( new Twig_Function( 'twitter_share', '\\Pixels\\Components\\SocialShare\\Share::twitter' ) );
     $twig->addFunction( new Twig_Function( 'linkedin_share', '\\Pixels\\Components\\SocialShare\\Share::linkedin' ) );
+    $twig->addFunction( new Twig_Function( 'whatsapp_share', '\\Pixels\\Components\\SocialShare\\Share::whatsapp' ) );
 
     return $twig;
 }

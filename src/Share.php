@@ -62,6 +62,23 @@ class Share
     }
 
     /**
+     * Get whatsapp share link
+     *
+     * @param mixed $url to be shared.
+     * @return string $link to be used in href.
+     * @since 1.0
+     */
+    public static function whatsapp(?string $url = null)
+    {
+
+        $url  = $url ?? self::get_current_url();
+        $link =
+        'whatsapp://send?text=' . $url;
+
+        return $link;
+    }
+
+    /**
      * Get current url
      *
      * @return string $url of current page.

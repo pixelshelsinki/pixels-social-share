@@ -140,4 +140,32 @@ final class ShareTest extends TestCase
             Share::linkedin()
         );
     }
+
+    /**
+     * whatsapp share.
+     */
+    public function testGetsWhatsappShareLink()
+    {
+
+        // With default link.
+        $this->assertEquals(
+            'whatsapp://send?text=https://pixels.fi/',
+            Share::whatsapp()
+        );
+
+        // With given link.
+        $this->assertEquals(
+            'whatsapp://send?text=https://test.fi/',
+            Share::whatsapp('https://test.fi/')
+        );
+
+        // Disable HTTPS.
+        $_SERVER['HTTPS'] = 'off';
+
+        // With disabled HTTPS.
+        $this->assertEquals(
+            'whatsapp://send?text=http://pixels.fi/',
+            Share::whatsapp()
+        );
+    }
 }
