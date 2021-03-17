@@ -69,7 +69,8 @@ class Share
      * @return string $link to be used in href.
      * @since 1.0
      */
-    public static function whatsup( $url = null, $message = '' ) {
+    public static function whatsup($url = null, $message = '')
+    {
 
         $url  = $url ?? self::get_current_url();
         $link =
