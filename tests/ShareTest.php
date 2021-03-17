@@ -142,27 +142,21 @@ final class ShareTest extends TestCase
     }
 
     /**
-     * Whatsup share.
+     * whatsapp share.
      */
-    public function testGetsWhatsupShareLink()
+    public function testGetsWhatsappShareLink()
     {
 
         // With default link.
         $this->assertEquals(
             'whatsapp://send?text=https://pixels.fi/',
-            Share::whatsup()
+            Share::whatsapp()
         );
 
         // With given link.
         $this->assertEquals(
             'whatsapp://send?text=https://test.fi/',
-            Share::whatsup('https://test.fi/')
-        );
-
-        // With given text.
-        $this->assertEquals(
-            'whatsapp://send?text=https://test.fi/',
-            Share::whatsup('https://test.fi/', 'Take a look')
+            Share::whatsapp('https://test.fi/')
         );
 
         // Disable HTTPS.
@@ -171,7 +165,7 @@ final class ShareTest extends TestCase
         // With disabled HTTPS.
         $this->assertEquals(
             'whatsapp://send?text=http://pixels.fi/',
-            Share::whatsup()
+            Share::whatsapp()
         );
     }
 }
